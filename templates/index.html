@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Modelo Local</title>
+    <link rel="stylesheet" href="static/css/mystyle.css">
+    <script src="static/js/script.js" defer></script>
+</head>
+<body>
+    <h1>Chat con modelo IA</h1>
+    <h2>LAB 4.0 BES</h2>
+    <div class="container">
+        <!-- Barra de audio animada -->
+        <div class="audio-bar">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+            <div class="bar" id="bar4"></div>
+            <div class="bar" id="bar5"></div>
+        </div>
+
+        <form method="POST">
+            <label for="user_message">Escribe tu mensaje:</label>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <textarea id="user_message" name="user_message" rows="4" cols="50"></textarea>
+                <button type="button" class="microphone-btn" onclick="activarMicrofono()">🎤</button>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+
+        <h2>Respuesta del modelo:</h2>
+        <p id="response_text">{{ response_text }}</p>
+    </div>
+
+    <!-- Círculo de carga superpuesto -->
+    <div id="loading_overlay" class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>
